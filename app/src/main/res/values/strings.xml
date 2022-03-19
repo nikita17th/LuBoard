@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">LuBoard</string>
+    <string name="registration_button">Зарегестрироваться</string>
+    <string name="email_title">EMAIL</string>
+    <string name="password_title">PASSWORD</string>
+    <string name="sing_in_button">Войти</string>
+    <string name="forgot_password_button">Забыли пароль?</string>
+    <string name="go_to_sing_in_button">Уже есть аккаунт</string>
 </resources>

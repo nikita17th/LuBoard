@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "888143740139",
+    "project_id": "luboard",
+    "storage_bucket": "luboard.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888143740139:android:dbcdbfc19b5f3aae5e52ae",
+        "android_client_info": {
+          "package_name": "com.lutalic.luboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "888143740139-lvfh0cf7dvrm66qm8t7gr6ot7kjku90b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8BxslY9vzblG_Ws0ZlSow-vp1QncLu6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "888143740139-lvfh0cf7dvrm66qm8t7gr6ot7kjku90b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
