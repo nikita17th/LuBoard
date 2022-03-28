@@ -7,10 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.lutalic.luboard.core.uiactions.UiActions
 import kotlinx.coroutines.launch
 import com.lutalic.luboard.R
-import com.lutalic.luboard.model.AccountAlreadyExistsException
-import com.lutalic.luboard.model.EmptyFieldException
-import com.lutalic.luboard.model.Field
-import com.lutalic.luboard.model.PasswordMismatchException
+import com.lutalic.luboard.model.*
 import com.lutalic.luboard.model.accounts.AccountsRepository
 import com.lutalic.luboard.model.accounts.entities.SignUpData
 import com.lutalic.luboard.utils.MutableUnitLiveEvent
@@ -23,8 +20,6 @@ class SignUpViewModel(
     private val uiActions: UiActions
 ) : ViewModel() {
 
-    private val _showSuccessSignUpMessageEvent = MutableUnitLiveEvent()
-    val showSuccessSignUpMessageEvent =_showSuccessSignUpMessageEvent.share()
 
     private val _goBackEvent = MutableUnitLiveEvent()
     val goBackEvent = _goBackEvent.share()
@@ -37,7 +32,7 @@ class SignUpViewModel(
             showProgress()
             try {
                 accountsRepository.signUp(signUpData)
-                showSuccessSignUpMessage()
+                uiActions.toast("The account has been created, now you can login")
                 goBack()
             } catch (e: EmptyFieldException) {
                 processEmptyFieldException(e)
@@ -45,14 +40,12 @@ class SignUpViewModel(
                 processPasswordMismatchException()
             } catch (e: AccountAlreadyExistsException) {
                 processAccountAlreadyExistsException()
+            } catch (e: AuthException) {
+                uiActions.toast(e.message ?: "Unknown registration error :C")
             } finally {
                 hideProgress()
             }
         }
-    }
-
-    fun toastSingUpSuccess(message: String){
-        uiActions.toast(message)
     }
 
     private fun processEmptyFieldException(e: EmptyFieldException) {
@@ -83,7 +76,6 @@ class SignUpViewModel(
         _state.value = _state.requireValue().copy(signUpInProgress = false)
     }
 
-    private fun showSuccessSignUpMessage() = _showSuccessSignUpMessageEvent.publishEvent()
 
     private fun goBack() = _goBackEvent.publishEvent()
 

@@ -3,18 +3,22 @@ package com.lutalic.luboard.presentation.main.auth
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.lutalic.luboard.core.uiactions.UiActions
 import kotlinx.coroutines.launch
 import com.lutalic.luboard.model.AuthException
 import com.lutalic.luboard.model.EmptyFieldException
 import com.lutalic.luboard.model.Field
+import com.lutalic.luboard.model.NoValidateEmailException
 import com.lutalic.luboard.model.accounts.AccountsRepository
 import com.lutalic.luboard.utils.MutableUnitLiveEvent
 import com.lutalic.luboard.utils.publishEvent
 import com.lutalic.luboard.utils.requireValue
 import com.lutalic.luboard.utils.share
+import java.lang.Exception
 
 class SignInViewModel(
-    private val accountsRepository: AccountsRepository
+    private val accountsRepository: AccountsRepository,
+    private val uiActions: UiActions
 ) : ViewModel() {
 
     private val _state = MutableLiveData(State())
@@ -23,11 +27,12 @@ class SignInViewModel(
     private val _clearPasswordEvent = MutableUnitLiveEvent()
     val clearPasswordEvent = _clearPasswordEvent.share()
 
-    private val _showAuthErrorToastEvent = MutableUnitLiveEvent()
-    val showAuthToastEvent = _showAuthErrorToastEvent.share()
-
     private val _navigateToTabsEvent = MutableUnitLiveEvent()
     val navigateToTabsEvent = _navigateToTabsEvent.share()
+
+    private val _validateEmailEvent = MutableUnitLiveEvent()
+    val validateEmailEvent = _validateEmailEvent.share()
+
 
     fun signIn(email: String, password: String) = viewModelScope.launch {
         showProgress()
@@ -36,9 +41,18 @@ class SignInViewModel(
             launchTabsScreen()
         } catch (e: EmptyFieldException) {
             processEmptyFieldException(e)
+        } catch (e: NoValidateEmailException) {
+            processNoValidateEmail()
         } catch (e: AuthException) {
-            processAuthException()
+            processAuthException(e)
         }
+    }
+
+    private fun processNoValidateEmail() {
+        _validateEmailEvent.publishEvent()
+        _state.value = _state.requireValue().copy(
+            signInInProgress = false
+        )
     }
 
     private fun processEmptyFieldException(e: EmptyFieldException) {
@@ -49,12 +63,12 @@ class SignInViewModel(
         )
     }
 
-    private fun processAuthException() {
+    private fun processAuthException(e: Exception) {
         _state.value = _state.requireValue().copy(
             signInInProgress = false
         )
         clearPasswordField()
-        showAuthErrorToast()
+        uiActions.toast(e.message ?: "Incorrect email or password")
     }
 
     private fun showProgress() {
@@ -63,7 +77,6 @@ class SignInViewModel(
 
     private fun clearPasswordField() = _clearPasswordEvent.publishEvent()
 
-    private fun showAuthErrorToast() = _showAuthErrorToastEvent.publishEvent()
 
     private fun launchTabsScreen() = _navigateToTabsEvent.publishEvent()
 

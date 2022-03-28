@@ -1,6 +1,6 @@
 package com.lutalic.luboard.model
 
-open class AppException : RuntimeException()
+open class AppException(message: String? = null) : RuntimeException(message)
 
 class EmptyFieldException(
     val field: Field
@@ -10,4 +10,6 @@ class PasswordMismatchException : AppException()
 
 class AccountAlreadyExistsException : AppException()
 
-class AuthException : AppException()
+class NoValidateEmailException() : AppException()
+
+class AuthException(override val message: String?) : AppException(message)

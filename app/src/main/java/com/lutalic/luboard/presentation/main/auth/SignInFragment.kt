@@ -2,11 +2,11 @@ package com.lutalic.luboard.presentation.main.auth
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.lutalic.luboard.R
 import com.lutalic.luboard.Repositories
+import com.lutalic.luboard.presentation.uiactions.AndroidUiActions
 import com.lutalic.luboard.databinding.FragmentSignInBinding
 import com.lutalic.luboard.utils.observeEvent
 import com.lutalic.luboard.utils.viewModelCreator
@@ -15,7 +15,12 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
 
     private lateinit var binding: FragmentSignInBinding
 
-    private val viewModel by viewModelCreator { SignInViewModel(Repositories.accountsRepository) }
+    private val viewModel by viewModelCreator {
+        SignInViewModel(
+            Repositories.accountsRepository,
+            AndroidUiActions(appContext = requireContext())
+        )
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -25,8 +30,8 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
 
         observeState()
         observeClearPasswordEvent()
-        observeShowAuthErrorMessageEvent()
         observeNavigateToTabsEvent()
+        observeValidateEmail()
     }
 
     private fun onSignInButtonPressed() {
@@ -49,16 +54,17 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
         binding.progressBar.visibility = if (it.showProgress) View.VISIBLE else View.INVISIBLE
     }
 
-    private fun observeShowAuthErrorMessageEvent() =
-        viewModel.showAuthToastEvent.observeEvent(viewLifecycleOwner) {
-            Toast.makeText(requireContext(), R.string.invalid_email_or_password, Toast.LENGTH_SHORT)
-                .show()
-        }
 
     private fun observeClearPasswordEvent() =
         viewModel.clearPasswordEvent.observeEvent(viewLifecycleOwner) {
             binding.passwordEditText.text?.clear()
         }
+
+    private fun observeValidateEmail() =
+        viewModel.validateEmailEvent.observeEvent(viewLifecycleOwner) {
+            ValidateErrorDialogFragment().show(childFragmentManager, ValidateErrorDialogFragment.TAG)
+        }
+
 
     private fun observeNavigateToTabsEvent() =
         viewModel.navigateToTabsEvent.observeEvent(viewLifecycleOwner) {

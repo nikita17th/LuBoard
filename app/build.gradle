@@ -47,7 +47,7 @@ dependencies {
     // Feature module Support
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
 
-
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.4.3-native-mt'
     implementation 'com.google.firebase:firebase-core:20.1.2'
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'

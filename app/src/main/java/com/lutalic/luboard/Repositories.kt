@@ -1,11 +1,9 @@
 package com.lutalic.luboard
 
 import com.lutalic.luboard.model.accounts.AccountsRepository
-import com.lutalic.luboard.model.accounts.InMemoryAccountsRepository
+import com.lutalic.luboard.model.accounts.FirebaseAccountRepository
 
 object Repositories {
 
-    val accountsRepository: AccountsRepository = InMemoryAccountsRepository()
-
-
+    val accountsRepository: AccountsRepository = FirebaseAccountRepository()
 }

@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.textfield.TextInputLayout
-import com.lutalic.luboard.core.uiactions.AndroidUiActions
+import com.lutalic.luboard.presentation.uiactions.AndroidUiActions
 import com.lutalic.luboard.R
 import com.lutalic.luboard.Repositories
 import com.lutalic.luboard.databinding.FragmentSignUpBinding
@@ -39,7 +39,6 @@ class SignUpFragment() : Fragment(R.layout.fragment_sign_up) {
 
         observeState()
         observeGoBackEvent()
-        observeShowSuccessSignUpMessageEvent()
     }
 
     private fun onCreateAccountButtonPressed() {
@@ -62,12 +61,6 @@ class SignUpFragment() : Fragment(R.layout.fragment_sign_up) {
         fillError(binding.repeatPasswordTextInput, state.repeatPasswordErrorMessageRes)
 
         binding.progressBar.visibility = if (state.showProgress) View.VISIBLE else View.INVISIBLE
-    }
-
-    private fun observeShowSuccessSignUpMessageEvent() {
-        viewModel.showSuccessSignUpMessageEvent.observeEvent(viewLifecycleOwner) {
-            viewModel.toastSingUpSuccess(resources.getString(R.string.sign_up_success))
-        }
     }
 
     private fun fillError(input: TextInputLayout, @StringRes stringRes: Int) {

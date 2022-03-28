@@ -7,6 +7,7 @@ import com.lutalic.luboard.model.accounts.AccountsRepository
 import com.lutalic.luboard.utils.MutableLiveEvent
 import com.lutalic.luboard.utils.publishEvent
 import com.lutalic.luboard.utils.share
+import kotlinx.coroutines.delay
 
 /**
  * SplashViewModel checks whether user is signed-in or not.
@@ -20,6 +21,7 @@ class SplashViewModel(
 
     init {
         viewModelScope.launch {
+            delay(2000) // FIXME типа грузим бд и сплешкрин крутит
             _launchMainScreenEvent.publishEvent(accountsRepository.isSignedIn())
         }
     }
