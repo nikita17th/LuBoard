@@ -1,4 +1,4 @@
-package com.lutalic.luboard.presentation.main.auth
+package com.lutalic.luboard.presentation.main.auth.signup
 
 import android.os.Bundle
 import android.view.View

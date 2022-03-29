@@ -1,4 +1,4 @@
-package com.lutalic.luboard.presentation.main.auth
+package com.lutalic.luboard.presentation.main.auth.signin
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

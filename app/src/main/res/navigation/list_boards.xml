@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_boxFragment"
             app:destination="@id/boardFragment" />
+        <action
+            android:id="@+id/action_listBoardFragment_to_addNewBoardFragment"
+            app:destination="@id/addNewBoardFragment" />
     </fragment>
     <fragment
         android:id="@+id/boardFragment"
@@ -23,4 +26,9 @@
             android:name="boardId"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/addNewBoardFragment"
+        android:name="com.lutalic.luboard.presentation.main.tabs.boardlist.AddNewBoardFragment"
+        android:label="Add board"
+        tools:layout="@layout/fagment_add_new_board" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.lutalic.luboard.presentation.main.tabs.settings
+package com.lutalic.luboard.presentation.main.tabs.posts
 
 import android.os.Bundle
 import android.view.View

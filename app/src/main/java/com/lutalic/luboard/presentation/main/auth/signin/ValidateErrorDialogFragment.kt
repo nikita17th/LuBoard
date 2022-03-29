@@ -1,4 +1,4 @@
-package com.lutalic.luboard.presentation.main.auth
+package com.lutalic.luboard.presentation.main.auth.signin
 
 import android.app.AlertDialog
 import android.app.Dialog

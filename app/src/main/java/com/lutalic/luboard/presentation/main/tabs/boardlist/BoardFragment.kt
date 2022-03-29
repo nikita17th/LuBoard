@@ -30,5 +30,4 @@ class BoardFragment : Fragment(R.layout.fragment_board) {
             findNavController().popBackStack()
         }
     }
-
 }

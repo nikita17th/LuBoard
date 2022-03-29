@@ -40,7 +40,7 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
     }
 
     /**
-     * Анимация для загрузочного колечка
+     * Animation for loading icon in splashscreen
      */
     private fun renderAnimations() {
         binding.loadingIndicator.alpha = 0f

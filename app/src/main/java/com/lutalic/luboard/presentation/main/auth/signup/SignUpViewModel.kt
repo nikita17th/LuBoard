@@ -1,4 +1,4 @@
-package com.lutalic.luboard.presentation.main.auth
+package com.lutalic.luboard.presentation.main.auth.signup
 
 import androidx.annotation.StringRes
 import androidx.lifecycle.MutableLiveData
@@ -32,7 +32,7 @@ class SignUpViewModel(
             showProgress()
             try {
                 accountsRepository.signUp(signUpData)
-                uiActions.toast("The account has been created, now you can login")
+                uiActions.toast("The account has been created, you can login after you confirm the email")
                 goBack()
             } catch (e: EmptyFieldException) {
                 processEmptyFieldException(e)

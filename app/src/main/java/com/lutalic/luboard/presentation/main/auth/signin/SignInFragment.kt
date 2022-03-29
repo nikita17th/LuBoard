@@ -1,4 +1,4 @@
-package com.lutalic.luboard.presentation.main.auth
+package com.lutalic.luboard.presentation.main.auth.signin
 
 import android.os.Bundle
 import android.view.View
@@ -62,7 +62,9 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
 
     private fun observeValidateEmail() =
         viewModel.validateEmailEvent.observeEvent(viewLifecycleOwner) {
-            ValidateErrorDialogFragment().show(childFragmentManager, ValidateErrorDialogFragment.TAG)
+            ValidateErrorDialogFragment().show(childFragmentManager,
+                ValidateErrorDialogFragment.TAG
+            )
         }
 
 
@@ -73,11 +75,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
 
     private fun onSignUpButtonPressed() {
         val email = binding.emailEditText.text.toString()
-        val emailArg = if (email.isBlank())
-            null
-        else {
-            email
-        }
+        val emailArg = email.ifBlank { null }
 
         val direction = SignInFragmentDirections.actionSignInFragmentToSignUpFragment(emailArg)
         findNavController().navigate(direction)

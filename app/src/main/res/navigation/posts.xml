@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/postsFragment"
-        android:name="com.lutalic.luboard.presentation.main.tabs.settings.PostsFragment"
+        android:name="com.lutalic.luboard.presentation.main.tabs.posts.PostsFragment"
         android:label="@string/posts"
         tools:layout="@layout/fragment_posts" />
 </navigation>

@@ -6,11 +6,18 @@
         <entry key="..\:/AndroidProjects/LuBoard/app/src/main/res/drawable/ic_dashboard.xml" value="0.1485" />
         <entry key="..\:/AndroidProjects/LuBoard/app/src/main/res/layout/activity_main.xml" value="0.12360688956433637" />
         <entry key="..\:/AndroidProjects/LuBoard/app/src/main/res/layout/activity_splash.xml" value="0.11302083333333333" />
+        <entry key="..\:/AndroidProjects/LuBoard/app/src/main/res/layout/add_new_board.xml" value="0.2346014492753623" />
+        <entry key="..\:/AndroidProjects/LuBoard/app/src/main/res/layout/board_preview_view.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/LuBoard/app/src/main/res/layout/board_view.xml" value="0.29683698296836986" />
+        <entry key="..\:/AndroidProjects/LuBoard/app/src/main/res/layout/fagment_add_new_board.xml" value="0.2346014492753623" />
         <entry key="..\:/AndroidProjects/LuBoard/app/src/main/res/layout/fragment_board.xml" value="0.11302083333333333" />
         <entry key="..\:/AndroidProjects/LuBoard/app/src/main/res/layout/fragment_board_list.xml" value="0.11302083333333333" />
         <entry key="..\:/AndroidProjects/LuBoard/app/src/main/res/layout/fragment_posts.xml" value="0.12604166666666666" />
         <entry key="..\:/AndroidProjects/LuBoard/app/src/main/res/layout/fragment_profile.xml" value="0.22826086956521738" />
+        <entry key="..\:/AndroidProjects/LuBoard/app/src/main/res/layout/fragment_sign_in.xml" value="0.2346014492753623" />
+        <entry key="..\:/AndroidProjects/LuBoard/app/src/main/res/layout/fragment_splash.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/LuBoard/app/src/main/res/layout/fragment_tabs.xml" value="0.134375" />
+        <entry key="..\:/AndroidProjects/LuBoard/app/src/main/res/menu/tabs_menu.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/glebk/Desktop/Mobile/LuBoard/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/glebk/Desktop/Mobile/LuBoard/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1225" />
         <entry key="..\:/Users/glebk/Desktop/Mobile/LuBoard/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1225" />

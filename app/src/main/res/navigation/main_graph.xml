@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.lutalic.luboard.presentation.main.auth.SignInFragment"
+        android:name="com.lutalic.luboard.presentation.main.auth.signin.SignInFragment"
         android:label="@string/screen_sign_in"
         tools:layout="@layout/fragment_sign_in">
         <action
@@ -26,7 +26,7 @@
         tools:layout="@layout/fragment_tabs" />
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.lutalic.luboard.presentation.main.auth.SignUpFragment"
+        android:name="com.lutalic.luboard.presentation.main.auth.signup.SignUpFragment"
         android:label="@string/screen_sign_up"
         tools:layout="@layout/fragment_sign_up">
         <argument

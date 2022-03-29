@@ -21,7 +21,7 @@ class SplashViewModel(
 
     init {
         viewModelScope.launch {
-            delay(2000) // FIXME типа грузим бд и сплешкрин крутит
+            delay(1000) // FIXME download data
             _launchMainScreenEvent.publishEvent(accountsRepository.isSignedIn())
         }
     }

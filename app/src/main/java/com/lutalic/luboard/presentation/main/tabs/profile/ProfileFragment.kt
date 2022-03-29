@@ -29,11 +29,11 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     private fun observeAccountDetails() {
         viewModel.account.observe(viewLifecycleOwner) { account ->
-            if (account == null) return@observe
+            if (account == null)
+                return@observe
             binding.emailTextView.text = account.email
         }
     }
-
 
     private fun observeRestartAppFromLoginScreenEvent() {
         viewModel.restartWithSignInEvent.observeEvent(viewLifecycleOwner) {
