@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboard"
+    app:startDestination="@id/listBoardFragment">
+
+    <fragment
+        android:id="@+id/listBoardFragment"
+        android:name="com.lutalic.luboard.presentation.main.tabs.boardlist.BoardListFragment"
+        android:label="@string/screen_list_boards"
+        tools:layout="@layout/fragment_board_list">
+        <action
+            android:id="@+id/action_dashboardFragment_to_boxFragment"
+            app:destination="@id/boardFragment" />
+        <action
+            android:id="@+id/action_listBoardFragment_to_addNewBoardFragment"
+            app:destination="@id/addNewBoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/boardFragment"
+        android:name="com.lutalic.luboard.presentation.main.tabs.boardlist.BoardFragment"
+        android:label="@string/screen_board"
+        tools:layout="@layout/fragment_board">
+        <argument
+            android:name="boardId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewBoardFragment"
+        android:name="com.lutalic.luboard.presentation.main.tabs.boardlist.AddNewBoardFragment"
+        android:label="Add board"
+        tools:layout="@layout/fagment_add_new_board" />
+</navigation>
