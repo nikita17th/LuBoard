@@ -1,2 +1,2 @@
 # Lutalic, LuBoard 0.1 Alpha 
-### RalerCulte & Sorgeligt 
+### RalerCulte & Sorgeligt & Nikita17th
