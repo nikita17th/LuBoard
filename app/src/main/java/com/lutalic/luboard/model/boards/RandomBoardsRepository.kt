@@ -31,11 +31,9 @@ class RandomBoardsRepository : BoardsRepository { // FIXME TO realtime db
                         .joinToString(""),
                     id = i,
                     countUsers = Random.nextInt(0, 20),
-                    priorityForUser = Random.nextInt(0, 20)
                 )
             )
         }
-        boards.sortedBy { it.priorityForUser }
         currentListFlow.value = boards.toMutableList()
     }
 

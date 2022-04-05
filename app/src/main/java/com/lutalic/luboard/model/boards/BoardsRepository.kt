@@ -1,6 +1,5 @@
 package com.lutalic.luboard.model.boards
 
-import com.lutalic.luboard.model.accounts.entities.Account
 import com.lutalic.luboard.model.boards.entities.Board
 import kotlinx.coroutines.flow.Flow
 

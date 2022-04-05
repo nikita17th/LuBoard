@@ -42,4 +42,6 @@
     <string name="screen_edit_profile">Edit Profile</string>
     <string name="posts">Posts</string>
     <string name="open_board">Open board</string>
+    <string name="name_of_board">Name of board</string>
+    <string name="create">Create</string>
 </resources>
