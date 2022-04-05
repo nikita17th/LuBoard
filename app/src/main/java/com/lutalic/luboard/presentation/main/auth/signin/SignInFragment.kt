@@ -80,5 +80,4 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
         val direction = SignInFragmentDirections.actionSignInFragmentToSignUpFragment(emailArg)
         findNavController().navigate(direction)
     }
-
 }
