@@ -1,4 +1,4 @@
-package com.lutalic.luboard.core.uiactions
+package com.lutalic.luboard.presentation.uiactions
 
 /**
  * Common actions that can be performed in the view-model
