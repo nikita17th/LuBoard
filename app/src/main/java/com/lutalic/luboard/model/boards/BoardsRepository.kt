@@ -15,10 +15,6 @@ interface BoardsRepository {
      */
     suspend fun deleteBoard(board: Board)
 
-    /**
-     * set a new priority for the board display
-     */
-    suspend fun setUserPriority(priority: Int, board: Board)
 
     /**
      * replace the board (edit)
@@ -29,6 +25,9 @@ interface BoardsRepository {
      * get flow of listBoards
      */
     fun getBoards(): Flow<List<Board>>
+
+
+    suspend fun loadPostsForBoard(board: Board)
 
     /**
      * add new board
