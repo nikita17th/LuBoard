@@ -3,7 +3,7 @@ package com.lutalic.luboard.presentation.main.auth.signin
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.lutalic.luboard.core.uiactions.UiActions
+import com.lutalic.luboard.presentation.uiactions.UiActions
 import kotlinx.coroutines.launch
 import com.lutalic.luboard.model.AuthException
 import com.lutalic.luboard.model.EmptyFieldException

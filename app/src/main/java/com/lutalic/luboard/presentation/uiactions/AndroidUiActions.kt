@@ -2,7 +2,6 @@ package com.lutalic.luboard.presentation.uiactions
 
 import android.content.Context
 import android.widget.Toast
-import com.lutalic.luboard.core.uiactions.UiActions
 
 /**
  * Android implementation of [UiActions]. Displaying simple toast message and getting string from resources.

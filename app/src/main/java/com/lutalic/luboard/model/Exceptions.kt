@@ -10,6 +10,6 @@ class PasswordMismatchException : AppException()
 
 class AccountAlreadyExistsException : AppException()
 
-class NoValidateEmailException() : AppException()
+class NoValidateEmailException : AppException()
 
 class AuthException(override val message: String?) : AppException(message)
