@@ -33,8 +33,7 @@ class AddNewBoardFragment : Fragment(R.layout.fagment_add_new_board) {
                 Board( // FIXME
                     name = binding.nameOfBoardInput.text.toString(),
                     id = -1,
-                    Random.nextInt(0, 20),
-                    1
+                    countUsers = Random.nextInt(0, 20),
                 )
             )
             findNavController().popBackStack()

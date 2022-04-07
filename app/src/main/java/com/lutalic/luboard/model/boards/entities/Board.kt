@@ -10,5 +10,5 @@ data class Board(
     val description: String? = null, // optional field
     val id: BoardId,
     val countUsers: Int,
-    var postList: Flow<List<Post>>
+    var postList: Flow<List<Post>>? = null
 )
